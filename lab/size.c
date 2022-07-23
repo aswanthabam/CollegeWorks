@@ -1,21 +1,21 @@
+// PROGRAM TO FIND SIZE AND RANGE OF DATATYPES
 #include <stdio.h>
-#include <stdlib.h>
 #include <limits.h>
 #include <float.h>
 
 int main() 
 {
-    printf("Size of Char is %ld bytes\n", sizeof(char));
-    printf("Range of Char is from %d to %d\n\n", CHAR_MIN,CHAR_MAX);
+    // SIZE OF DATA TYPES
     printf("Size of Int is %ld bytes\n",sizeof(int));
-    printf("Range of Int is from %d to %d\n\n", INT_MIN,INT_MAX);    
-    printf("Size of Long Int is %ld bytes\n",sizeof(long));
-    printf("Range of Long Int is from %ld to %ld\n\n",LONG_MIN,LONG_MAX);    
-    printf("Size of Short Int is %ld bytes\n",sizeof(short));
-    printf("Range of Short Int is from %d to %d\n\n", SHRT_MIN,SHRT_MAX);
-    printf("Range of Unsigned Short Int is from 0 to %d\n", USHRT_MAX);
-    printf("Range of Unsigned Char is from 0 to %d\n", UCHAR_MAX);
-    printf("Range of Unsigned Int is from 0 to %u\n", UINT_MAX);
-    printf("Range of Unsigned Long Int is from 0 to %lu\n",ULONG_MAX);  
+    printf("Size of Char is %ld bytes\n", sizeof(char));
+    printf("Size of float is %ld bytes\n",sizeof(float));
+    printf("Size of Double is %ld bytes\n",sizeof(double));
+    printf("Size of Long Int is %ld bytes\n\n",sizeof(long));
+    // RANGE OF DATA TYPES
+    printf("Range of Int is from %d to %d\n", INT_MIN,INT_MAX);
+    printf("Range of Char is from %d to %d\n", CHAR_MIN,CHAR_MAX);
+    printf("Range of Float is from %.10e to %.10e\n", FLT_MIN,FLT_MAX);
+    printf("Range of Double is from %.10e to %.10e\n", DBL_MIN,DBL_MAX);
+    printf("Range of Long Int is from %ld to %ld\n",LONG_MIN,LONG_MAX);
     return 0;
 }

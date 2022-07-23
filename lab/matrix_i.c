@@ -1,10 +1,18 @@
+// PROGRAM TO CHECK WHETHER A GIVEN MATRIX IS AN IDENTITY MATRIX OR NOT.
+
 #include<stdio.h>
 int main()
 {
-    int a[10][10], m, n, i, j,f=0;
-    printf("enter the number of rows and columns: ");
+    int a[10][10],m,n,i,j,f=0;
+    printf("Enter the number of rows and columns: ");
     scanf("%d %d",&m,&n);
-    printf("enter the array elements: ");
+    if(m != n)
+    {
+        printf("Matrix is not a square matrix!\nMatrix is not an identity matrix\n");
+        return 0;
+    }
+    printf("Enter elements: ");
+
     for(i=0;i<m;i++)
     {
         for(j=0;j<n;j++)
@@ -29,8 +37,8 @@ int main()
         }
     }
     if(f==0)
-        printf("matrix is identity matrix\n");
+        printf("Matrix is identity matrix\n");
     else
-        printf("matrix is not an identity matrix\n");
+        printf("Matrix is not an identity matrix\n");
     return 0;
 }
