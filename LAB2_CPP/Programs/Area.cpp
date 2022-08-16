@@ -12,35 +12,7 @@ class Shape
 	float area(float,float,float);//For cube
 	float volume(float,float,float);//For cube
 };
-int main()
-{
-	int n;
-	Shape sh;
-	cout<<"Enter:\n 1) Cube\n 2) Sphear\n 3) Cylinder\n Choose: ";
-	cin>>n;
-	switch(n)
-	{
-		case 1:
-			cout<<"Enter sides of cube: ";
-			cin>>sh.a>>sh.b>>sh.c;
-			cout<<"Area is "<<sh.area(sh.a,sh.b,sh.c)
-			<<"\nVolume is "<<sh.volume(sh.a,sh.b,sh.c)<<endl;
-			break;
-		case 2:
-			cout<<"Enter radius of sphear: ";
-			cin>>sh.a;
-			cout<<"Area is "<<sh.area(sh.a)
-			<<"\nVolume is "<<sh.volume(sh.a)<<endl;
-			break;
-		case 3:
-			cout<<"Enter Radius and height of cylinder: ";
-			cin>>sh.a>>sh.b;
-			cout<<"Area is "<<sh.area(sh.a,sh.b)
-			<<"\nVolume is "<<sh.volume(sh.a,sh.b)<<endl;
-			break;
-	}
-	return 0;
-}
+
 float Shape::area(float a)
 {
 	// Area of sphere 4πr²
@@ -72,4 +44,34 @@ float Shape::volume(float a,float b,float c)
 {
 	// volume of cube lbh
 	return a*b*c;
+}
+
+int main()
+{
+	int n;
+	Shape sh;
+	cout<<"Enter:\n 1) Cube\n 2) Sphear\n 3) Cylinder\n Choose: ";
+	cin>>n;
+	switch(n)
+	{
+		case 1:
+			cout<<"Enter sides of cube: ";
+			cin>>sh.a>>sh.b>>sh.c;
+			cout<<"Area is "<<sh.area(sh.a,sh.b,sh.c)
+			<<"\nVolume is "<<sh.volume(sh.a,sh.b,sh.c)<<endl;
+			break;
+		case 2:
+			cout<<"Enter radius of sphear: ";
+			cin>>sh.a;
+			cout<<"Area is "<<sh.area(sh.a)
+			<<"\nVolume is "<<sh.volume(sh.a)<<endl;
+			break;
+		case 3:
+			cout<<"Enter Radius and height of cylinder: ";
+			cin>>sh.a>>sh.b;
+			cout<<"Area is "<<sh.area(sh.a,sh.b)
+			<<"\nVolume is "<<sh.volume(sh.a,sh.b)<<endl;
+			break;
+	}
+	return 0;
 }
