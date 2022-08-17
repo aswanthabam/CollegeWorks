@@ -1,61 +1,56 @@
-#include <iostream>
+// PROGRAM TO FIND THE TRACE AND TRANSPOSE OF A MATRIX
+#include<iostream>
 using namespace std;
-class matrix
+class Matrix
 {
- public:
-    int m, n, i, j, a[10][10], t[10][10], sum=0;
-    void getdata();
-    void trace();
-    void transpose();
+	int a[10][10],m,n;
+public:
+	void get()
+	{
+		int temp;
+		cout<<"Enter order of square matrix(m,n): ";
+		cin>>m>>n;
+		cout<<"Enter elements: \n";
+		// GETTING MATRIX
+		for(int i = 0;i < m; i++)
+		{
+			for(int j = 0;j<n;j++)
+			{
+				cin>>temp;
+				a[i][j] =  temp;
+			}
+		}
+	}
+	void trace()
+	{
+		if(m!=n)
+		{
+			cout<<"\nTrace cannot be found since the matrix is not a square matrix\n";
+			return; // NOT A SQUARE MATRIX ,RETURN
+		}
+		int trace = 0;
+		for(int i = 0;i < m;i++)
+			for(int j = 0;j <n;j++)
+				if(i == j)
+					trace += a[i][j];
+		cout<<"\nTrace is : "<<trace<<endl;
+	}
+	void transpose()
+	{
+		cout<<"\nTranspose of the Matrix is: \n";
+		for(int i = 0;i < n;i++)
+		{
+			for(int j = 0;j <m;j++)
+				cout<<a[j][i]<<"\t";
+			cout<<"\n";
+		}
+	}
 };
-void matrix::getdata()
-{
-    cout<<"\nEnter order of matrix : ";
-    cin>>m>>n;
-    cout<<"\nEnter array elements : "<<endl;
-    for(i=0;i<m;i++)
-    {
-        for(j=0;j<n;j++)
-        {
-            cin>>a[i][j];
-        }
-    }
-}
-void matrix::trace()
-{
-    if(m==n)
-    {
-       for(i=0;i<m;i++)
-        {
-            for(j=0;j<n;j++)
-            {
-                if(i==j)
-                {
-                    sum=sum+a[i][j];
-                }
-            }
-        }
-        cout<<"\nTrace of the matrix is "<<sum<<endl<<endl;
-    }
-    else
-        cout<<"\nTrace cannot be found since the matrix is not a square matrix\n"<<endl;
-}
-void matrix::transpose()
-{
-    cout<<"\nTranspose of the matrix is"<<endl;
-    for(i=0;i<n;i++)
-    {
-        for(j=0;j<m;j++)
-        {
-            cout<<a[j][i]<<" ";
-        }
-        cout<<endl;
-    }
-}
 int main()
 {
-    matrix M;
-    M.getdata();
-    M.transpose();
-    M.trace();
+	Matrix m;
+	m.get();
+	m.transpose();
+	m.trace();
+	return 0;
 }

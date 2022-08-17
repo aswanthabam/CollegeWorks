@@ -2,7 +2,7 @@
 #include<iostream>
 using namespace std;
 class Date
-{
+{ 
   int d,m,y,flag = 0;
 public:
   void get()

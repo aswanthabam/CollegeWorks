@@ -1,38 +1,30 @@
+//STRING COMPARISON
 #include <iostream>
 using namespace std;
 class String
 {
-    char str[20];
+    char str[50];
 public:
     void read()
     {
-        cin>>str;
+        cin.getline(str,50);
     }
     void operator ==(String s)
     {
-        int i=0,flag=1;
-        while(str[i]!='\0'||s.str[i]!='\0')
+        int flag=1;
+        for(int i = 0;str[i]!='\0'||s.str[i]!='\0';i++)
         {
-            if(str[i]!=s.str[i])
-                flag= 0;
-            i++;
+            if(str[i]!=s.str[i]) flag= 0;
         }
         if(flag==1)
-        {
             cout<<"\nStrings are equal\n";
-            cout<<"..................................\n\n";
-        }
         else
-        {
             cout<<"\nStrings are not equal\n";
-            cout<<"..................................\n\n";
-        }
     }
 };
 int main()
 {
     String s1,s2;
-    cout<<"\n..................................";
     cout<<"\nEnter first string: ";
     s1.read();
     cout<<"\nEnter second string: ";

@@ -1,3 +1,4 @@
+// AREA AND VOLUME OF FIGURES
 #include<iostream>
 using namespace std;
 
@@ -5,73 +6,74 @@ class Shape
 {
 	public:
 	float a,b,c;
-	float area(float); // For Sphear
-	float volume(float); // For Sphear
-	float area(float,float); // For Cylinder
-	float volume(float,float); // For Cylinder
-	float area(float,float,float);//For cube
-	float volume(float,float,float);//For cube
+	void area(float); // For Sphear
+	void volume(float); // For Sphear
+	void area(float,float); // For Cylinder
+	void volume(float,float); // For Cylinder
+	void area(float,float,float);//For cube
+	void volume(float,float,float);//For cube
 };
 
-float Shape::area(float a)
+void Shape::area(float a)
 {
 	// Area of sphere 4πr²
-	return 4.0*3.14*a*a;
+	cout<<"Area of sphere = "<<4.0*3.14*a*a<<" sq. cm"<<endl;
 }
-float Shape::area(float a,float b)
+void Shape::area(float a,float b)
 {
 	// Area of cylinder 2πr(r+h)
-	return 2.0*3.14*a*(a+b);
+	cout<<"Area of cylinder = "<<2.0*3.14*a*(a+b)<<" sq. cm"<<endl;
 }
-float Shape::area(float a,float b,float c)
+void Shape::area(float a,float b,float c)
 {
 	// Area of cube 2(lw+lh+hw)
-	return 2.0*(a*b+a*c+c*b);
+	cout<<"Area of cube = "<<2.0*(a*b+a*c+c*b)<<" sq. cm"<<endl;
 }
 
 
-float Shape::volume(float a)
+void Shape::volume(float a)
 {
 	// Volume of sphere 4/3πr³
-	return (4/3.0)*3.14*(a*a*a);
+	cout<<"Volume sphere of  = "<<(4/3.0)*3.14*(a*a*a)<<" cubic. cm"<<endl;
 }
-float Shape::volume(float a,float b)
+void Shape::volume(float a,float b)
 {
 	// Volume of cylinder πr²h
-	return 3.14*a*a*b;
+	cout<<"Volume cylinder of  = "<<3.14*a*a*b<<" cubic. cm"<<endl;
 }
-float Shape::volume(float a,float b,float c)
+void Shape::volume(float a,float b,float c)
 {
 	// volume of cube lbh
-	return a*b*c;
+	cout<<"Volume cube of  = "<<a*b*c<<" cubic. cm"<<endl;
 }
 
 int main()
 {
 	int n;
 	Shape sh;
-	cout<<"Enter:\n 1) Cube\n 2) Sphear\n 3) Cylinder\n Choose: ";
+	cout<<"Menu\n************************\n 1. For Cube\n 2. For Sphere\n 3. For Cylinder\n\nChoose an option : ";
 	cin>>n;
 	switch(n)
 	{
 		case 1:
 			cout<<"Enter sides of cube: ";
 			cin>>sh.a>>sh.b>>sh.c;
-			cout<<"Area is "<<sh.area(sh.a,sh.b,sh.c)
-			<<"\nVolume is "<<sh.volume(sh.a,sh.b,sh.c)<<endl;
+			sh.area(sh.a,sh.b,sh.c);
+			sh.volume(sh.a,sh.b,sh.c);
 			break;
 		case 2:
-			cout<<"Enter radius of sphear: ";
+			cout<<"Enter radius of sphere: ";
 			cin>>sh.a;
-			cout<<"Area is "<<sh.area(sh.a)
-			<<"\nVolume is "<<sh.volume(sh.a)<<endl;
+			sh.area(sh.a);
+			sh.volume(sh.a);
 			break;
 		case 3:
 			cout<<"Enter Radius and height of cylinder: ";
 			cin>>sh.a>>sh.b;
-			cout<<"Area is "<<sh.area(sh.a,sh.b)
-			<<"\nVolume is "<<sh.volume(sh.a,sh.b)<<endl;
+			sh.area(sh.a,sh.b);
+			sh.volume(sh.a,sh.b);
 			break;
+		default:cout<<"Invalid choice!"<<endl;
 	}
 	return 0;
 }

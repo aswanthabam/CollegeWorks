@@ -1,11 +1,9 @@
-/*
- Author : Aswanth V C
-*/
+//NEGATION OF ELEMENTS OF AN ARRAY
 #include<iostream>
 using namespace std;
-class sample
+class Negate
 {
-	int a[10],n;
+	int a[20],n;
 public:
 	void read()
 	{
@@ -25,12 +23,14 @@ public:
 		for(int i = 0;i < n;i++) a[i] *= -1;
 	}
 };
-
 int main()
 {
-	sample obj;
+	Negate obj;
 	obj.read();
+	cout<<"Before Negation ";
+	obj.display();
 	-obj;
+	cout<<"After Negation ";
 	obj.display();
 	return 0;
 }

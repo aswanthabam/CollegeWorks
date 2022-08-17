@@ -1,3 +1,4 @@
+// PROGRAM TO ADD TIME TO ANOTHER
 #include <iostream>
 using namespace std;
 class Time
@@ -12,19 +13,21 @@ public:
   }
   Time add(Time t)
   {
+    // ADDS TIME
     Time temp;
     temp.sec = sec + t.sec;
     temp.min = min + t.min;
     temp.hr = hr + t.hr;
-    while(temp.min >= 60)
-    {
-      temp.hr++;
-      temp.min -= 60;
-    }
+    
     while(temp.sec >= 60)
     {
       temp.min++;
       temp.sec -= 60;
+    }
+    while(temp.min >= 60)
+    {
+      temp.hr++;
+      temp.min -= 60;
     }
     return temp;
   }
@@ -36,21 +39,20 @@ public:
 int main()
 {   
   int e,f,g, p,q,r;
-  cout<<"\nEnter Initial time in hh mm ss format\n";
+  cout<<"\nEnter Initial time in hh mm ss format : ";
   cin>>e>>f>>g;
-  cout<<"Enter time to be added in hh mm ss format\n";
+  cout<<"Enter time to be added in hh mm ss format : ";
   cin>>p>>q>>r;
   Time t1(e,f,g), t2(p,q,r),t3;
   t3 = t1.add(t2);
-  cout<<"\n....................................................\n";
-  cout<<"Initial time is ";
+  cout<<endl<<"Initial time is : ";
   t1.display();
   cout<<endl;
-  cout<<"Time to be added is ";
+  cout<<"Time to be added is : ";
   t2.display();
   cout<<endl;
-  cout<<"Resultant time is ";
+  cout<<"Resultant time is : ";
   t3.display();
-  cout<<"....................................................\n\n";
+  cout<<endl;
   return 0;
 }
