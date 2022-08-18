@@ -1,46 +1,43 @@
-/*
- Author : Aswanth V C
-*/
-#include<iostream>
+//SORTING STRINGS
+#include <iostream>
+#include <string>
+#define DAYS 7
 using namespace std;
-
 class Sort
 {
-	int num[25],n;
-	public:
-	void get();
-	void sort();
+	int size = DAYS;
+	char *strings[DAYS] = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+public:
+    void sort()
+    {
+    	for (int i = 0; i < size - 1; ++i)
+    	{
+    		for (int j = i + 1; j < size; ++j)
+    		{
+    			if (strcmp(strings[i], strings[j]) > 0)
+    			{
+    				swap(strings[i], strings[j]);
+    				}
+    			}
+    	}
+    }
+    void display()
+    {
+    	for (int i = 0; i < size; ++i)
+    	    cout << strings[i] << " "<<endl;
+    }
 };
+
 int main()
 {
-	Sort s;
-	s.get();
-	s.sort();
-}
-void Sort::get()
-{
-	cout<<"Enter limit : ";
-	cin>>n;
-	cout<<"Enter numbers: ";
-	for(int i = 0;i < n;i++) cin>>num[i];
-}
-void Sort::sort()
-{
-	int lg,k,u = n;
-	cout<<"Sorted list is: \n";
-	for(;n >0;n--)
-	{
-		for(int i = 0;i < n;i++)
-		{
-			if(num[i] > lg || i == 0)
-			{ 
-				lg = num[i];
-				k = i;
-			}
-		}
-		num[k] = num[n-1];
-		num[n-1] = lg;
-	}
-	for(int i = 0;i < u;i++) cout<<num[i]<<", ";
-	cout<<endl;
+	Sort sc;
+	cout<<"\nDays of the week\n";
+    cout<<"................\n";
+    sc.display();
+    sc.sort();
+    cout<<"\nDays of the week after sorting in alphabetical order\n";
+    cout<<".......................................................\n";
+	sc.display();
+    cout<<endl;
+	return 0;
 }
