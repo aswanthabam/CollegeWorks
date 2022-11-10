@@ -13,8 +13,8 @@ int main()
 	for(int i = low;i <= high;i++)
 	{
 	   flag = 0; 
-	   if(i == 1) continue;
-	   for(int j = 2;j < i;j++)
+	   if(i <= 1) continue; // Correction
+	   for(int j = 2;j < i/2;j++)
 	   {
 	       if(i % j == 0)
 	       {
