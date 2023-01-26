@@ -8,6 +8,14 @@ void print(int a[],int size)
   }
   printf("\n");
 }
+void partition(int *a,int l,int h){
+  int pivot = a[l];
+  while (i < j)
+  {
+    if(a[i])
+  }
+  
+}
 void quickSort(int a[],int size,int *comp,int *exch)
 {
   int item,i,j,list[size];
@@ -18,13 +26,17 @@ void quickSort(int a[],int size,int *comp,int *exch)
       a[j+1] = a[j];
     a[j+1] = item;
   }
-  print(a,size);
 }
 
 int main()
 {
   int a[10] = {10,7,5,3,1,9,6,8,2,0},size = 10;
+  printf("Given Array: ");
   print(a,size);
-  quickSort(a,size);
+  insertSort(&a,size,&comp,&exch);
+  printf("Result Array: ");
+  print(a,size);
+  printf("Total no of comparison in insertion sort = %d\n",comp);
+  printf("Total no of exchanges in insertion sort = %d\n",exch);
   return 0;
 }
