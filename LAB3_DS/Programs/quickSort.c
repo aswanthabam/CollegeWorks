@@ -1,15 +1,14 @@
-#include<iostream>
-using namespace std;
+#include<stdio.h>
 
 void print(int a[],int size)
 {
   for(int i = 0;i < size;i++)
   {
-    cout<<a[i]<<", ";
+    printf("%d, ",a[i]);
   }
-  cout<<endl;
+  printf("\n");
 }
-void insertSort(int a[],int size)
+void quickSort(int a[],int size,int *comp,int *exch)
 {
   int item,i,j,list[size];
   for(i = 1;i < size;i++)
@@ -26,6 +25,6 @@ int main()
 {
   int a[10] = {10,7,5,3,1,9,6,8,2,0},size = 10;
   print(a,size);
-  insertSort(a,size);
+  quickSort(a,size);
   return 0;
 }

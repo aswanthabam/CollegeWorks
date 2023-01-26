@@ -3,8 +3,7 @@ using namespace std;
 int Binary(int a[],int n,int e)
 {
     int mid, l=0, r=n;
-    while(l<=r)
-    {
+    do{
         mid=(r+l)/2;
         cout<<mid<<endl;
         if(a[mid]==e)
@@ -19,7 +18,7 @@ int Binary(int a[],int n,int e)
         {
             l=mid+1;
         }
-    }
+    }while(l<=r);
     return -1;
 }
 int main()
