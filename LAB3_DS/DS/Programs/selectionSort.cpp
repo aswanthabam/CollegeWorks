@@ -40,10 +40,10 @@ public:
             min_index = i;
             for (int j = i + 1; j < size; j++)
             {
+                comp++;
                 if (array[min_index] > array[j])
                 {
                     min_index = j;
-                    comp++;
                 }
             }
             if (min_index != i)

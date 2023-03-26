@@ -39,11 +39,10 @@ int main(){
         printf("The product of the two matrices is:-\n");
         
         for(int i=0;i<m;i++){
-            printf("|\t");
             for(int j=0;j<q;j++){
                 printf("%d\t", res[i][j]);
             }
-            printf("|\n");
+            printf("\n");
         }
     }
     

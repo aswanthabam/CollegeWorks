@@ -14,29 +14,18 @@ private:
             quickSort(A, j + 1, h);
         }
     }
-    int partition(int *A, int l, int h)
+    int partition(int *arr, int low, int high)
     {
-        int pivot, i = l, j = h + 1, t;
-        pivot = A[l];
-        while (1)
-        {
-            do
-            {
+        int pivot = arr[high];
+        int i = low - 1;
+        for (int j = low; j < high; j++) {
+            if (arr[j] < pivot) {
                 i++;
-            } while (i <= h && A[i] <= pivot);
-            do
-            {
-                j--;
-            } while (A[j] > pivot);
-            if (i >= j)
-                break;
-            t = A[i];
-            A[i] = A[j];
-            A[j] = t;
+                swap(arr[i], arr[j]);
+            }
         }
-        A[l] = A[j];
-        A[j] = pivot;
-        return j;
+        swap(arr[i + 1], arr[high]);
+        return i + 1;
     }
 
 public:

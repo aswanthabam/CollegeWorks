@@ -21,7 +21,7 @@ echo "Result of the Addition is $res" ;;
 echo "Result of the Substrsaction is $res" ;;
 3)res=$(($a * $b)) 
 echo "Result of the Multiplication is $res" ;;
-4)res=$(($a / $b)) 
+4)res=`expr $(($a / $b)) `
 echo "Result of the Division is $res" ;;
 5)res=$(($a % $b)) 
 echo "Result of the reminder is $res" ;;
