@@ -1,108 +1,63 @@
 #include <iostream>
 using namespace std;
-class Polynomial;
+class Poly
+{
+  int *array, size;
 
-class Term
-{
 public:
-  int coeff, exp;
-  Term(){};
-  void set(int a, int b) // Set values of the term
+  void read()
   {
-    coeff = a;
-    exp = b;
-  }
-  void readValues(int a) // Read values from the user
-  {
-    cout << "Enter coefficient and exponent of term " << a + 1 << ": ";
-    cin >> coeff >> exp;
-  }
-};
-class Polynomial
-{
-public:
-  int n;
-  Term *poly;
-  Polynomial()
-  {
-    poly = new Term[10];
-  }
-  void read() // Read values from the user
-  {
-    cout << "Enter no of terms: ";
-    cin >> n;
-    poly = new Term[n];
-    for (int i = 0; i < n; i++)
+    cout << "Enter degree: ";
+    cin >> size;
+    array = new int[size];
+    for (int i = 0; i <= size; i++)
     {
-      (poly + i)->readValues(i);
+      cout << "Enter coefficient of x^" << i << ": ";
+      cin >> array[i];
     }
   }
-  void display() // Display Polynomial
+  int max(int m, int n)
   {
-    for (int i = 0; i < n; i++)
+    return (m > n) ? m : n;
+  }
+  Poly *add(Poly *poly2)
+  {
+    Poly *res = new Poly;
+    int s = max(size, poly2->size);
+    res->size = s;
+    res->array = new int[s];
+    for (int i = 0; i <= size; i++)
+      res->array[i] = array[i];
+    for (int i = 0; i <= poly2->size; i++)
+      res->array[i] += poly2->array[i];
+    return res;
+  }
+  void printPoly()
+  {
+    for (int i = size; i >= 0; i--)
     {
-      cout << (poly + i)->coeff << "x^" << (poly + i)->exp;
-      if (i != n - 1)
+      cout << array[i];
+      if (i != 0)
+        cout << "x^" << i;
+      if (i != 0)
         cout << " + ";
     }
     cout << endl;
   }
-  Polynomial *operator+(Polynomial ply2) // Addition of polynomials
-  {
-    Polynomial *res = new Polynomial;
-    Term *poly2 = ply2.poly;
-    int i = 0, j = 0, z = 0;
-    while ((i < n) && (j < ply2.n))
-    {
-      if (poly[i].exp == poly2[j].exp)
-      {
-        res->poly[z].set(poly[i].coeff + poly2[j].coeff, poly[i].exp);
-        i++;
-        j++;
-        z++;
-      }
-      else if (poly[i].exp > poly2[j].exp)
-      {
-        res->poly[z] = poly[i];
-        i++;
-        z++;
-      }
-      else if (poly[i].exp < poly2[j].exp)
-      {
-        res->poly[z] = poly2[i];
-        j++;
-        z++;
-      }
-    }
-    while (i < n)
-    {
-      res->poly[z] = poly[i];
-      i++;
-      z++;
-    }
-    while (j < ply2.n)
-    {
-      res->poly[z] = poly2[j];
-      j++;
-      z++;
-    }
-    res->n = z;
-    return res;
-  }
 };
 int main()
 {
-  Polynomial poly1, poly2, *res;
-  cout << "Enter polynomial one:-" << endl;
+  Poly poly1, poly2, *res;
+  cout << "Enter details of first polynomial: " << endl;
   poly1.read();
-  cout << "Enter polynnomial two:-" << endl;
+  cout << "Enter details of second polynomial: " << endl;
   poly2.read();
-  cout << "Polynomial one : ";
-  poly1.display();
-  cout << "Polynomial two : ";
-  poly2.display();
-  res = (poly1 + poly2);
-  cout << "Result : ";
-  res->display();
+  cout << "First polynomial: ";
+  poly1.printPoly();
+  cout << "Second polynomial: ";
+  poly2.printPoly();
+  res = poly1.add(&poly2);
+  cout << "Sum of the two polynomials is: ";
+  res->printPoly();
   return 0;
 }

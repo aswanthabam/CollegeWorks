@@ -1,97 +1,101 @@
 #include <iostream>
 using namespace std;
-
-class LinearSearch
+class search
 {
-    int *array, size;
+    int a[10], n;
 
 public:
-    LinearSearch(int *a, int n)
+    void getdata()
     {
-        array = a;
-        size = n;
+        cout << "Enter size of array:";
+        cin >> n;
+        cout << "Enter elements of array: ";
+        for (int i = 0; i < n; i++)
+        {
+            cin >> a[i];
+        }
     }
-    void search(int key)
+    void sequential_search(int key)
     {
-
-        int i = 0, found = 0, location, comp = 0;
-        cout << "Searching '" << key << "' with Linear Search Algorithm ..." << endl;
-        cout << "-----------------------------------------" << endl;
-        while (i < size)
+        cout << "Searching using sequential search ...." << endl;
+        cout << "------------------------------------" << endl;
+        int flag = 0;
+        int comp = 0;
+        for (int i = 0; i < n; i++)
         {
             comp++;
-            if (array[i] == key)
+            if (a[i] == key)
             {
-                found = 1;
-                location = i;
+                cout << "Element found at position " << i + 1 << endl;
+                flag = 1;
                 break;
+            }
+        }
+        if (flag == 0)
+        {
+            cout << "Element not found\n";
+        }
+        cout << "No of comparisons using sequential search : " << comp << endl;
+    }
+    void binary_search(int key)
+    {
+        cout << "Searching using binary search ..." << endl;
+        cout << "------------------------------------" << endl;
+        cout << "Array is sorted in ascending order!" << endl;
+        int low = 0, high = n - 1, mid, found = 0, comp = 0;
+        while (low <= high)
+        {
+            mid = (low + high) / 2;
+            comp++;
+            if (a[mid] == key)
+            {
+                cout << "Element found at position " << mid + 1 << endl;
+                found = 1;
+                break;
+            }
+            else if (a[mid] < key)
+            {
+                low = mid + 1;
             }
             else
             {
-                i++;
+                high = mid - 1;
             }
         }
-        if (found)
-            cout << key << " found at index " << location << " (" << location + 1 << "'th position)" << endl;
-        else
-            cout << "Not Found!" << endl;
-        cout << "No of comparisons using Linear Search is " << comp << endl;
+        if (!found)
+            cout << "Element not found\n";
+        cout << "No of comparisons using binary search : " << comp << endl;
     }
-};
-class BinarySearch
-{
-    int *array, size;
-
-public:
-    BinarySearch(int *a, int n)
+    void swap(int *x, int *y)
     {
-        array = a;
-        size = n;
+        int t = *x;
+        *x = *y;
+        *y = t;
     }
-    void search(int key)
+    void bubble_sort()
     {
-        int i = 0, j = size - 1, found = 0, m, location, comp = 0;
-        cout << "Searching '" << key << "' with Binary Search Algorithm ..." << endl;
-        cout << "-----------------------------------------" << endl;
-        while (i <= j)
+        int i, j;
+        for (i = n - 1; i > 0; i--)
         {
-            comp++;
-            m = ((i + j) / 2);
-            if (array[m] == key)
+            for (j = 0; j < i; j++)
             {
-                found = 1;
-                location = m;
-                break;
-            }
-            else if (array[m] > key)
-            {
-                j = m - 1;
-            }
-            else if (array[m] < key)
-            {
-                i = m + 1;
+                if (a[j] > a[j + 1])
+                {
+                    swap(&a[j], &a[j + 1]);
+                }
             }
         }
-        if (found)
-            cout << key << " found at index " << location << " (" << location + 1 << "'th position)" << endl;
-        else
-            cout << "Not Found!" << endl;
-        cout << "No of comparisons using Binary Search is " << comp << endl;
     }
 };
 int main()
 {
-    int a[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, n = 10, key;
-    cout << "Array is : ";
-    for (int i = 0; i < n; i++)
-        cout << a[i] << " ";
-    cout << endl
-         << "Enter key to search: ";
+    search s;
+    int key, ch;
+    s.getdata();
+    cout << "Enter the element to be searched: ";
     cin >> key;
-    BinarySearch *bi = new BinarySearch(a, n);
-    LinearSearch *li = new LinearSearch(a, n);
-    li->search(key);
-    cout << endl;
-    bi->search(key);
+    s.sequential_search(key);
+    s.bubble_sort(); // Sort before binary search
+    s.binary_search(key);
     return 0;
 }

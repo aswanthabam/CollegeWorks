@@ -1,0 +1,34 @@
+Sequential_Search ( Array A, Value x,Size n)
+
+    Start
+    Set i = 0,comp = 0;
+    While i < n:
+        comp += 1
+        if A[i] = x:
+            Print Element found at position 'i+1'
+            Set found = 1
+        EndIf
+    EndWhile
+    If found = 0, Print Element not in array.
+    Print no of comparisons, comp
+    End
+
+Binary_Search (Array A, Value x, Size n)
+
+    Start
+    Set low = 1, high = n - 1, comp = 0, found = 0
+    While low <= high:
+        set mid = (low + high) / 2
+        comp += 1
+        If A[mid] == x:
+            Print Element found at position mid + 1
+            Set found = 1
+        Else If A[mid] < x:
+            Set low = mid + 1
+        Else
+            Set high = mid - 1 
+        EndIf
+    End while 
+    If found = 0, Print Element not found
+    Print no of comparisons, comp
+    End

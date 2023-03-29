@@ -1,0 +1,14 @@
+Start
+Declare a class named "SelectionSort" with a public function "sort" that takes four parameters: an integer array "arr" to be sorted, the size of the array "size", and two integer references "comparisons" and "exchanges".
+Initialize "comparisons" and "exchanges" to 0.
+Use two nested loops to iterate over the array elements and perform the following operations: 
+Compare the current element with the minimum element found so far.
+If the current element is smaller than the minimum element found so far, update the index of the minimum element.
+If the index of the minimum element found is different than the current element's index, swap the current element with the minimum element found so far.
+Increment "comparisons" by 1 for each comparison performed during the inner loop.
+Increment "exchanges" by 1 for each swap performed during the outer loop.
+After the outer loop completes, the array will be sorted in ascending order.
+In the main function, prompt the user to enter the size of the array and the elements of the array.
+Create an instance of the SelectionSort class and call the "sort" function using the instance of the SelectionSort class, the array "arr", and the references "comparisons" and "exchanges".
+Print the sorted array, number of comparisons, and number of exchanges.
+End

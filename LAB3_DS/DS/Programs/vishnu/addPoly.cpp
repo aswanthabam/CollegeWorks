@@ -2,37 +2,44 @@
 using namespace std;
 class Poly
 {
+    int *array, size;
+
 public:
-    void Accept(int *A, int m)
+    void read()
     {
-        for (int i = 0; i <= m; i++)
+        cout << "Enter degree: ";
+        cin >> size;
+        array = new int[size];
+        for (int i = 0; i <= size; i++)
         {
-            cout << "Enter the coefficient of x^" << i << ": ";
-            cin >> A[i];
+            cout << "Enter coefficient of x^" << i << ": ";
+            cin >> array[i];
         }
     }
     int max(int m, int n)
     {
         return (m > n) ? m : n;
     }
-    int *add(int A[], int B[], int m, int n)
+    Poly *add(Poly *poly2)
     {
-        int size = max(m, n);
-        int *sum = new int[size];
-        for (int i = 0; i <= m; i++)
-            sum[i] = A[i];
-        for (int i = 0; i <= n; i++)
-            sum[i] += B[i];
-        return sum;
+        Poly *res = new Poly;
+        int s = max(size, poly2->size);
+        res->size = s;
+        res->array = new int[s];
+        for (int i = 0; i <= size; i++)
+            res->array[i] = array[i];
+        for (int i = 0; i <= poly2->size; i++)
+            res->array[i] += poly2->array[i];
+        return res;
     }
-    void printPoly(int poly[], int n)
+    void printPoly()
     {
-        for (int i = 0; i <= n; i++)
+        for (int i = size; i >= 0; i--)
         {
-            cout << poly[i];
+            cout << array[i];
             if (i != 0)
                 cout << "x^" << i;
-            if (i != n)
+            if (i != 0)
                 cout << " + ";
         }
         cout << endl;
@@ -40,19 +47,17 @@ public:
 };
 int main()
 {
-    Poly poly;
-    int m, n;
-    cout << "Enter the degree of the first polynomial: ";
-    cin >> m;
-    int *A = new int[m];
-    poly.Accept(A, m);
-    cout << "Enter the degree of the second polynomial: ";
-    cin >> n;
-    int *B = new int[n];
-    poly.Accept(B, n);
-    int *sum = poly.add(A, B, m, n);
-    int size = poly.max(m, n);
+    Poly poly1, poly2, *res;
+    cout << "Enter details of first polynomial: " << endl;
+    poly1.read();
+    cout << "Enter details of second polynomial: " << endl;
+    poly2.read();
+    cout << "First polynomial: ";
+    poly1.printPoly();
+    cout << "Second polynomial: ";
+    poly2.printPoly();
+    res = poly1.add(&poly2);
     cout << "Sum of the two polynomials is: ";
-    poly.printPoly(sum, size);
+    res->printPoly();
     return 0;
 }

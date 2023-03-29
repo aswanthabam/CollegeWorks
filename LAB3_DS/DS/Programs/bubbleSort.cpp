@@ -1,63 +1,50 @@
 #include <iostream>
 using namespace std;
-
 class BubbleSort
 {
-  int size, *array;
-
 public:
-  int comp = 0, exch = 0;
-  void swap(int *a, int *b)
+  void sort(int arr[], int size, int &comparisons, int &exchanges)
   {
-    int tmp = *a;
-    *a = *b;
-    *b = tmp;
-  }
-  void read()
-  {
-    cout << "Enter size: ";
-    cin >> size;
-    array = new int[size];
-    cout << "Enter array: ";
-    for (int i = 0; i < size; i++)
-      cin >> array[i];
-  }
-  void display()
-  {
-    for (int i = 0; i < size; i++)
+    comparisons = 0;
+    exchanges = 0;
+    bool swapped;
+    for (int i = 0; i < size - 1; i++)
     {
-      cout << array[i] << " ";
-    }
-    cout << endl;
-  }
-  void sort()
-  {
-    cout << "Sorting using Bubble sort algorithm ...." << endl;
-    cout << "-----------------------------------" << endl;
-    for (int i = 0; i < size; i++)
-    {
+      swapped = false;
       for (int j = 0; j < size - i - 1; j++)
       {
-        comp++;
-        if (array[j] > array[j + 1])
+        comparisons++;
+        if (arr[j] > arr[j + 1])
         {
-          swap(&array[j], &array[j + 1]);
-          exch++;
+          swap(arr[j], arr[j + 1]);
+          exchanges++;
+          swapped = true;
         }
+      }
+      if (!swapped)
+      {
+        break;
       }
     }
   }
 };
 int main()
 {
-  BubbleSort *so = new BubbleSort();
-  so->read();
-  cout << "The array is : ";
-  so->display();
-  so->sort();
-  cout << "The sorted array is : ";
-  so->display();
-  cout << "No of comparisons using Bubble sort is : " << so->comp << endl;
-  cout << "No of exchanges using Bubble sort is : " << so->exch << endl;
+  BubbleSort obj;
+  int size;
+  cout << "Enter the size of the array: ";
+  cin >> size;
+  int arr[size];
+  cout << "Enter the elements of the array: ";
+  for (int i = 0; i < size; i++)
+    cin >> arr[i];
+  int comparisons, exchanges;
+  obj.sort(arr, size, comparisons, exchanges);
+  cout << "Sorted array is: ";
+  for (int i = 0; i < size; i++)
+    cout << arr[i] << " ";
+  cout << endl;
+  cout << "Number of comparisons: " << comparisons << endl;
+  cout << "Number of exchanges: " << exchanges << endl;
   return 0;
 }

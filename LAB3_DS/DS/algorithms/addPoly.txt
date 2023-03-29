@@ -1,0 +1,22 @@
+
+1) Define a class Poly with private member variables array and size, and public member functions read(), max(), add(), and printPoly().
+2) Inside the read() function,
+    Prompt the user to input the degree of the polynomial.
+    Use a loop to input the coefficient of each term of the polynomial and store it in the array.
+3) Inside the max() function
+    take two integer parameters and return the maximum value of the two.
+4) Inside the add() function,
+    Take a pointer to another Poly object as a parameter.
+    Create a new Poly object to store the sum.
+    Determine the size of the result polynomial as the maximum of the sizes of the two polynomials.
+    Copy the coefficients of the first input polynomial into the array of the result polynomial.
+    Iterate over the coefficients of the second input polynomial, and add each coefficient to the corresponding coefficient in the array of the result polynomial.
+    Return the new Poly object containing the sum.
+5) Inside the printPoly method, iterate over each element in the array and print the coefficient and the power of x in the correct format.
+6) In the main() 
+    Declare two Poly objects poly1 and poly2.
+    Call the read() function for each of them to input the polynomial coefficients.
+    Call the printPoly() function for each polynomial to display them to the user.
+    Call the add() function of poly1 with poly2 as the argument, which returns a pointer to a new Poly object containing the sum of the two polynomials. Store this pointer in a pointer variable res.
+    Call the printPoly() function for the result polynomial pointed to by res to display the sum of the two polynomials to the user.
+7) End

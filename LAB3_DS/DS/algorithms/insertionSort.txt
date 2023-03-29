@@ -1,0 +1,22 @@
+Start
+Define a class called InsertionSort with a public method called sort that takes an array of integers, its size, and two integer references for comparisons and exchanges as parameters.
+Set the comparison and exchange variables to zero.
+For each element in the array starting from the second element:
+Set the key variable to the current element.
+Set j to the index of the previous element.
+While j is not negative and the element at j is greater than the key:
+Set the element at j+1 to the element at j.
+Decrement j.
+Increment the comparison and exchange variables.
+Set the element at j+1 to the key.
+Increment the exchange variable.
+In the main function:
+Prompt the user to enter the size of the array and read the value.
+Create an integer array of size equal to the entered value.
+Prompt the user to enter the elements of the array and read them.
+Create an object of the InsertionSort class called obj.
+Declare two integer variables called comparisons and exchanges.
+Call the sort method of the obj object, passing the array, its size, and the comparisons and exchanges variables as parameters.
+Print the sorted array.
+Print the number of comparisons and exchanges made during the sorting process.
+End
