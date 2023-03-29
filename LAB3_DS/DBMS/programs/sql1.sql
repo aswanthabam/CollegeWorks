@@ -16,7 +16,7 @@ ALTER TABLE students ADD COLUMN srank INTEGER;
 
 SELECT * FROM students;
 
-SELECT sname FROM students WHERE sex="F";
+SELECT sname FROM students WHERE sex="M";
 
 SELECT AVG(mark) as Average FROM students;
 
@@ -27,3 +27,10 @@ WHERE mark >= (
         from students
     )
 ORDER BY mark DESC;
+
+SELECT sname
+FROM students
+WHERE
+    sex = 'F'
+    AND mark > 20
+    AND mark < 40;
