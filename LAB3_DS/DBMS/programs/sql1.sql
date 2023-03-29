@@ -8,7 +8,7 @@ CREATE TABLE
 
 INSERT INTO
     students(sno, sname, sex, mark)
-VALUES (1, "Aswanth", "M", 100), (2, "Arun", "M", 80), (3, "Neelu", "F", 50), (4, "Amal", "M", 70), (5, "Anjali", "F", 100);
+VALUES (1, "Adam", "M", 100), (2, "David", "M", 80), (3, "Emily", "F", 50), (4, "Michael", "M", 70), (5, "Sarah", "F", 100);
 
 SELECT * FROM students;
 
@@ -18,7 +18,7 @@ SELECT * FROM students;
 
 SELECT sname FROM students WHERE sex="F";
 
-SELECT AVG(mark) FROM students;
+SELECT AVG(mark) as Average FROM students;
 
 SELECT sno, sname
 from students

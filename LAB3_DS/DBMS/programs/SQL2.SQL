@@ -9,31 +9,31 @@ CREATE TABLE
 
 INSERT INTO department
 VALUES (
-        "Aswanth",
+        "Adam",
         20000,
         100,
         "Computer Science",
-        "Muzhappilangad"
+        "Kasargod"
     ), (
-        "Amaan",
+        "David",
         10000,
         100,
         "Computer Science",
         "Kannur"
     ), (
-        "Savin",
+        "Michael",
         5000,
         102,
         "History",
         "Irrity"
     ), (
-        "Yadhu",
+        "Sarah",
         8000,
         102,
         "History",
         "Panoor"
     ), (
-        "Kiran",
+        "Emily",
         7000,
         103,
         "Commerce",
@@ -56,6 +56,6 @@ CREATE VIEW STAR AS
 	SELECT ename,salary,city FROM department 
 ; 
 
-SELECT * FROM Star;
+SELECT * FROM STAR;
 
-SELECT ename,ROUND(salary,10) FROM department;
+SELECT ename,ROUND(salary,10) AS Round FROM department;
