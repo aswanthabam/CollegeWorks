@@ -1,22 +1,26 @@
 # C Programming
 
-The folder contains the following programs:
+The folder contains two folders:
 
-| File/Folder | Description |
-| :-- | :-- |
-| arith.c | PROGRAM TO ACCEPT TWO NUMBERS AND PERFORM VARIOUS ARITHMETIC OPERATIONS [ +, -, *, / ] BASED ON THE SYMBOL ENTERED. |
-| arr_int.c | PROGRAM TO ACCESS AN ARRAY OF INTEGERS USING POINTERS. |
-| fact.c | RECURSIVE PROGRAM TO FIND THE FACTORIAL OF A NUMBER. |
-| fahr_celsius.c | PROGRAM TO CONVERT FAHRENHEIT TO CELSIUS |
-| file.c | PROGRAM TO CREATE A FILE AND STORE SOME RECORDS IN IT. DISPLAY THE CONTENTS OF THE SAME. |
-| lar_second_nu.c | Program to accept three numbers and find largest and second largest numbers |
-| matrix_i.c | PROGRAM TO CHECK WHETHER A GIVEN MATRIX IS AN IDENTITY MATRIX OR NOT. |
-| matrix_mul.c | PROGRAM FOR MATRIX MULTIPLICATION. |
-| palindrome.c | PROGRAM TO CHECK WHETHER THE STRING IS A PALINDROME |
-| prime.c | PROGRAM TO PRINT ALL PRIME NUMBERS BETWEEN ANY TWO GIVEN LIMITS. |
-| roots_qu.c | PROGRAM TO FIND ROOTS OF A QUADRATIC EQUATION |
-| size.c | PROGRAM TO FIND SIZE AND RANGE OF DATATYPES |
-| struct.c | PROGRAM TO CREATE AN EMPLOYEE STRUCTURE AND DISPLAY THE SAME. |
-| swap.c | FUNCTION TO SWAP TWO NUMBERS USING TWO POINTERS. |
-| vowel.c | PROGRAM TO COUNT AND DISPLAY THE DIFFERENT VOWELS IN A LINE OF TEXT |
-| Outputs | Folder containing screenshots of aome outputs |
+- **Programs** : Contains the programs.
+- **Outputs** : Contains some of the output screenshots.
+
+Contents inside the Programs folder:
+
+| File/Folder     | Description                                                                                                         |
+| :-------------- | :------------------------------------------------------------------------------------------------------------------ |
+| arith.c         | Program To Accept Two Numbers And Perform Various Arithmetic Operations [ +, -, *, / ] Based On The Symbol Entered. |
+| arr_int.c       | Program To Access An Array Of Integers Using Pointers.                                                              |
+| fact.c          | Recursive Program To Find The Factorial Of A Number.                                                                |
+| fahr_celsius.c  | Program To Convert Fahrenheit To Celsius                                                                            |
+| file.c          | Program To Create A File And Store Some Records In It. Display The Contents Of The Same.                            |
+| lar_second_nu.c | Program To Accept Three Numbers And Find Largest And Second Largest Numbers                                         |
+| matrix_i.c      | Program To Check Whether A Given Matrix Is An Identity Matrix Or Not.                                               |
+| matrix_mul.c    | Program For Matrix Multiplication.                                                                                  |
+| palindrome.c    | Program To Check Whether The String Is A PALINDROME                                                                 |
+| prime.c         | Program To Print All Prime Numbers Between Any Two Given Limits.                                                    |
+| roots_qu.c      | Program To Find Roots Of A Quadratic Equation                                                                       |
+| size.c          | Program To Find Size And Range Of Datatypes                                                                         |
+| struct.c        | Program To Create An Employee Structure And Display The Same.                                                       |
+| swap.c          | Function To Swap Two Numbers Using Two Pointers.                                                                    |
+| vowel.c         | Program To Count And Display The Different Vowels In A Line Of Text                                                 |
