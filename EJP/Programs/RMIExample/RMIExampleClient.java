@@ -1,10 +1,10 @@
 import java.rmi.Naming;
 
-public class MyRMIClient {
+public class RMIExampleClient {
     public static void main(String[] args) {
         try {
-            RMIInterface remoteObject = (RMIInterface) Naming.lookup("rmi://localhost/MyRemoteObject");
-            String result = remoteObject.sayHello();
+            RMIExampleInterface remoteObject = (RMIExampleInterface) Naming.lookup("rmi://localhost/MyRemoteObject");
+            int result = remoteObject.add(30,50);
             System.out.println("Remote method invocation result: " + result);
         } catch (Exception e) {
             e.printStackTrace();

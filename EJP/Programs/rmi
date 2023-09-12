@@ -1,0 +1,73 @@
+#!/bin/bash
+# Check if the user provided at least two arguments
+if [ $# -lt 2 ]; then
+    echo -e "\nUsage: [start/client/compile] <folder_name>\n"
+    echo "The folder must contain all the files nessesary. eg: "
+    echo "  If folder name is RMI, you need these files in the folder:"
+    echo "    1) RMIInterface.java (Needed for both client and server)"
+    echo "    2) RMIImplementaion.java (Only needed for server)"
+    echo "    3) RMIClient.java (Only needed for client)"
+    echo "    4) RMIServer.java (Only needed for Server)"
+    echo -e "\nYou want to pass the folder name (RMI as the second argument)"
+    exit 1
+fi
+command="$1"
+folder="$2"
+
+interface=$folder"Interface"
+implementaion=$folder"Implementation"
+client=$folder"Client"
+server=$folder"Server"
+
+cd $folder
+
+case "$command" in
+    "start")
+        echo "Starting Server with folder: $folder"
+        echo "Compiling... (${folder}/${interface}.java)"
+        javac $interface'.java'
+        echo "Compiling... (${folder}/${implementaion}.java)"
+        javac $implementaion'.java'
+        echo "Compiling... (${folder}/${server}.java)"
+        javac $server'.java'
+        echo "Running... (${folder}/${server}.java)"
+        java $server
+        ;;
+    "compile")
+        echo "Compiling all files with folder: $folder"
+        echo "Following are the files going to compile, do ckeck if those exist in your folder"
+        echo "Interface: $interface"".java"
+        echo "implementation: $implementaion"".java"
+        echo "client: $client"".java"
+        echo "server: $server"".java"
+
+        echo "Compiling... (${folder}/${interface}.java)"
+        javac $interface'.java'
+        echo "Compiling... (${folder}/${implementaion}.java)"
+        javac $implementaion'.java'
+        echo "Compiling... (${folder}/${client}.java)"
+        javac $client'.java'
+        echo "Compiling... (${folder}/${server}.java)"
+        javac $server'.java'
+        ;;
+    "client")
+        echo "Starting client and calling remote function with folder: $folder"
+        echo "Compiling... (${folder}/${interface}.java)"
+        javac $interface'.java'
+        echo "Compiling... (${folder}/${client}.java)"
+        javac $client'.java'
+        echo "Running... (${folder}/${client}.java)"
+        java $client
+        ;;
+    *) 
+      echo -e "\nUsage: [start/client/compile] <folder_name>\n"
+      echo "The folder must contain all the files nessesary. eg: "
+      echo "  If folder name is RMI, you need these files in the folder:"
+      echo "    1) RMIInterface.java (Needed for both client and server)"
+      echo "    2) RMIImplementaion.java (Only needed for server)"
+      echo "    3) RMIClient.java (Only needed for client)"
+      echo "    4) RMIServer.java (Only needed for Server)"
+      echo -e "\nYou want to pass the folder name (RMI as the second argument)"
+      exit 1
+    ;;
+esac

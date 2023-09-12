@@ -11,5 +11,6 @@ This is a repository which includes my lab/college works or code. The repository
 - JAVA Programs (JAVA)
 - Python Programming (PYTHON)
 - Enterprise Java Programming (EJP)
+- Linux/Shell Scripting (LINUX)
 
 More details about each is given in the corresponding folders.

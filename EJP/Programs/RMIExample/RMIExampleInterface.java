@@ -1,7 +1,7 @@
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
-public interface RMIInterface extends Remote {
+public interface RMIExampleInterface extends Remote {
     // Declare remote methods
-    String sayHello() throws RemoteException;
+    int add(int a,int b) throws RemoteException;
 }
