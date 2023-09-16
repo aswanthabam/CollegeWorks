@@ -1,4 +1,5 @@
-lim = int(input("enter a number more than 5: "))
+# Print perfect numbers in the given range
+lim = int(input("Enter a number more than 5: "))
 lst = []
 
 for x in range(5,lim+1):

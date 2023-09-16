@@ -1,3 +1,4 @@
+# Program to find lcm and gcd of two numbers
 def lcm(a,b):
   greater = a if a > b else b 
   while True:

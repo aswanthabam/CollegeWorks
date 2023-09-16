@@ -1,3 +1,4 @@
+# Program to implement binary search
 def binarySearch(lst,key):
   found = False
   start = 0
