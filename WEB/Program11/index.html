@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expression Evaluator</title>
+  </head>
+  <body>
+    <h1>Expression Evaluator</h1>
+    <label for="expression">Enter an expression:</label>
+    <input type="text" id="expression" placeholder="e.g., 2 + 3 * 5" />
+    <button onclick="evaluateExpression()">Evaluate</button>
+    <p id="result"></p>
+    <script>
+      function evaluateExpression() {
+        var expressionInput = document.getElementById("expression");
+        var resultParagraph = document.getElementById("result");
+        var expression = expressionInput.value;
+        var result = eval(expression);
+        if (!isNaN(result)) {
+          resultParagraph.innerHTML = "Result: " + result;
+        } else {
+          resultParagraph.innerHTML = "Error: Invalid expression";
+        }
+      }
+    </script>
+  </body>
+</html>

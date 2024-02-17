@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Numbers</title>
+  </head>
+  <body>
+    <h1>Prime Numbers in a Range</h1>
+    <label for="start">Start Range:</label>
+    <input type="number" id="start" placeholder="Enter start range" /> <br />
+    <br />
+    <label for="end">End Range:</label>
+    <input type="number" id="end" placeholder="Enter end range" /> <br />
+    <br />
+    <button onclick="printPrimeNumbers()">Find Prime Numbers</button>
+    <p id="result"></p>
+    <script>
+      function isPrime(number) {
+        if (number <= 1) {
+          return false;
+        }
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+          if (number % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+      function printPrimeNumbers() {
+        var startRange = Number(document.getElementById("start").value);
+        var endRange = Number(document.getElementById("end").value);
+        var resultParagraph = document.getElementById("result");
+        var primes = [];
+        if (isNaN(startRange) || isNaN(endRange)) {
+          resultParagraph.innerHTML =
+            "Please enter valid numeric values for both start and end range.";
+          return;
+        }
+        for (let i = startRange; i <= endRange; i++) {
+          if (isPrime(i)) {
+            primes.push(i);
+          }
+        }
+        if (primes.length > 0) {
+          resultParagraph.innerHTML =
+            "Prime numbers in the range: <br>" + primes.join(", ");
+        } else {
+          resultParagraph.innerHTML =
+            "No prime numbers found in the specified range.";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mouse Events</title>
+    <style>
+      #hoverBox {
+        width: 200px;
+        height: 100px;
+        background-color: #e0e0e0;
+        text-align: center;
+        line-height: 100px;
+        margin: 50px auto;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      function onHover() {
+        document.getElementById("hoverBox").style.backgroundColor = "#a0a0a0";
+        document.getElementById("hoverBox").innerHTML = "Mouse Over!";
+      }
+      function onHoverOut() {
+        document.getElementById("hoverBox").style.backgroundColor = "#e0e0e0";
+        document.getElementById("hoverBox").innerHTML = "Mouse Out!";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="hoverBox" onmouseover="onHover()" onmouseout="onHoverOut()">
+      Hover me
+    </div>
+  </body>
+</html>
